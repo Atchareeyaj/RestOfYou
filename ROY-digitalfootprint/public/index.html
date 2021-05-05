@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="sketch.js"></script>
+</head>
+
+<body>
+    <button id="buttonState1"> > 100 </button>
+    <button id="buttonState2"> > 50 </button>
+    <button id="buttonState3"> < 50 </button>
+
+    <h3 class="state1"> Words I searched more than 100 times</h3>
+    <h3 class="state2"> Words I searched more than 50 times</h3>
+    <h3 class="state3">Words I searched less than 50 times</h3>
+    <div class="state3">
+        <label for="numInput">How many time I search</label>
+        <input type="range" id="numInput" name="numInput" min="1" max="49" value="25">
+        <p>Words I search for <span id="val"></span> times</p>
+        <button id="submit">submit</button>
+    </div>
+    <script>
+        var slider = document.getElementById("numInput");
+        var output = document.getElementById("val");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    </script>
+</body>
+
+</html>
